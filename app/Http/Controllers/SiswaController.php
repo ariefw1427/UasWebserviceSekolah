@@ -17,6 +17,12 @@ class SiswaController extends Controller
         $siswa= Siswa::with('matapelajaran')->get();
         return response()->json($siswa);
     }
+
+    public function show($siswa)
+    {
+        $siswa = Siswa::where('id', $siswa)->get();
+        return response()->json($siswa);
+    }
     public function data($siswa)
     {
         $siswa = Siswa::with('matapelajaran')->where('id', $siswa)->first();

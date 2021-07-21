@@ -21,11 +21,13 @@ Route::post('login', 'UserController@login');
 
  
 Route::get('/siswa', 'SiswaController@tampil')->middleware('jwt.verify');
+Route::get('/siswa/{siswa}', 'SiswaController@show')->middleware('jwt.verify');
 Route::post('/siswa', 'SiswaController@tambah')->middleware('jwt.verify');
 Route::patch('/siswa/{siswa}', 'SiswaController@ubah')->middleware('jwt.verify');
 Route::delete('/siswa/{siswa}', 'SiswaController@hapus')->middleware('jwt.verify');
 
 Route::get('/mapel', 'MataPelajaranController@tampil')->middleware('jwt.verify');
+Route::get('/mapel/{mapel}', 'SiswaController@show')->middleware('jwt.verify');
 Route::post('/mapel', 'MataPelajaranController@tambah')->middleware('jwt.verify');
 Route::patch('/mapel/{mapel}', 'MataPelajaranController@ubah')->middleware('jwt.verify');
 Route::delete('/mapel/{mapel}', 'MataPelajaranController@hapus')->middleware('jwt.verify');

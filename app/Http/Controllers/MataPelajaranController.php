@@ -15,6 +15,12 @@ class MataPelajaranController extends Controller
         return response()->json($mapel);
     }
 
+    public function show($mapel)
+    {
+        $mapel = MataPelajaran::where('id', $mapel)->get();
+        return response()->json($mapel);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
